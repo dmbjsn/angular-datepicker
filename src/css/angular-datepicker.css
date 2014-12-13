@@ -133,6 +133,12 @@ datepicker,
   font-weight: 500;
   background: rgba(255, 255, 255, 0.45);
 }
+.datepicker-calendar-years-pagination a:not(.datepicker-disabled):first-child:before {
+  content: "< ";
+}
+.datepicker-calendar-years-pagination a.datepicker-active + a:not(.datepicker-disabled):after {
+  content: " >";
+}
 .datepicker-calendar-days-header{
   max-width: 100%;
   margin:0 auto;
