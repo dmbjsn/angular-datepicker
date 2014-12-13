@@ -48,10 +48,6 @@
           '<div class="datepicker-calendar-years-pagination">' +
           '<a ng-class="{\'datepicker-active\': y === year, \'datepicker-disabled\': !isSelectableMaxYear(y) || !isSelectableMinYear(y)}" href="javascript:void(0)" ng-click="setNewYear(y)" ng-repeat="y in paginationYears">{{y}}</a>' +
           '</div>' +
-          '<div class="datepicker-calendar-years-pagination-pages">' +
-          '<a href="javascript:void(0)" ng-click="paginateYears(paginationYears[0])" ng-class="{\'datepicker-item-hidden\': paginationYearsPrevDisabled}">' + prevButton + '</a>' +
-          '<a href="javascript:void(0)" ng-click="paginateYears(paginationYears[paginationYears.length -1 ])" ng-class="{\'datepicker-item-hidden\': paginationYearsNextDisabled}">' + nextButton + '</a>' +
-          '</div>' +
           '</div>' +
           //days column
           '<div class="datepicker-calendar-days-header">' +
@@ -348,31 +344,14 @@
           var i
             , theNewYears = [];
 
-          for (i = 10/* Years */; i > 0; i -= 1) {
+          for (i = 1/* Years */; i > 0; i -= 1) {
 
             theNewYears.push(startingYear - i);
           }
 
-          for (i = 0; i < 10/* Years */; i += 1) {
+          for (i = 0; i < 2/* Years */; i += 1) {
 
             theNewYears.push(startingYear + i);
-          }
-
-          //check range dates
-          if (dateMaxLimit && theNewYears && theNewYears.length && !$scope.isSelectableMaxYear(Number(theNewYears[theNewYears.length - 1]) + 1)) {
-
-            $scope.paginationYearsNextDisabled = true;
-          } else {
-
-            $scope.paginationYearsNextDisabled = false;
-          }
-
-          if (dateMinLimit && theNewYears && theNewYears.length && !$scope.isSelectableMinYear(Number(theNewYears[0]) - 1)) {
-
-            $scope.paginationYearsPrevDisabled = true;
-          } else {
-
-            $scope.paginationYearsPrevDisabled = false;
           }
 
           $scope.paginationYears = theNewYears;

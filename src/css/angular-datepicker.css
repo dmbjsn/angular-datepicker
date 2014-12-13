@@ -114,26 +114,24 @@ datepicker,
   margin-left:1%;
 }
 .datepicker-calendar-years-pagination{
-  padding:2% 0 0 0;
+  padding:2% 0 2% 0;
   float:left;
   clear: right;
   width: 100%;
 }
 .datepicker-calendar-years-pagination a, .datepicker-calendar-years-pagination a:hover {
-  font-size:12px;
-  padding:0 7px;
+  font-size:16px;
+  padding:5px 7px;
   font-weight: normal;
   margin:3px 1% 0 1%;
-  line-height: 20px;
+  line-height: 24px;
   display: inline-block;
+  width:30%;
 }
 .datepicker-calendar-years-pagination a.datepicker-active {
   color:rgba(0, 0, 0, 0.9);
   font-weight: 500;
   background: rgba(255, 255, 255, 0.45);
-}
-.datepicker-calendar-years-pagination-pages a,.datepicker-calendar-years-pagination-pages a:hover{
-  padding:5px 10px;
 }
 .datepicker-calendar-days-header{
   max-width: 100%;
